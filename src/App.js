@@ -1,15 +1,16 @@
 
 import './App.css';
 
-function App() {
+import BookList from './BookList';
+
+  function App() {
+  const books = ['Book 1', 'Book 2', 'Book 3'];
   return (
     <div className="App">
       <header className="App-header">
-        
-<br>
-</br>
+
         <div h1 > Favourite Books</div>
-     
+       <BookList books={books} />
                 
       </header>
     </div>
