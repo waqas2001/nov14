@@ -3,29 +3,29 @@ import './App.css';
 import React, { useState } from 'react';
 //import AddBookForm from './AddBookForm';
 
+// import React, { useState } from 'react';
+
 function App() {
   const [books, setBooks] = useState([]);
-  const [newBook, setNewBook] = useState('');
+  const [newBookTitle, setNewBookTitle] = useState('');
 
-  const handleInputChange = (e) => {
-    setNewBook(e.target.value);
-  };
-
+  // Event handler for submitting a new book title
   const handleAddBook = () => {
-    if (newBook.trim() !== '') {
-      setBooks([...books, newBook]);
-      setNewBook('');
+    if (newBookTitle.trim() !== '') {
+      // Update the state to include the new book title
+      setBooks([...books, newBookTitle]);
+      // Clear the input field
+      setNewBookTitle('');
     }
   };
 
   return (
     <div>
-      <h1>My Favourite books</h1>
+      <h1>My Favourite Books</h1>
       <input
         type="text"
-        placeholder="Enter a new book title"
-        value={newBook}
-        onChange={handleInputChange}
+        value={newBookTitle}
+        onChange={(e) => setNewBookTitle(e.target.value)}
       />
       <button onClick={handleAddBook}>Add</button>
       <ul>
@@ -38,5 +38,3 @@ function App() {
 }
 
 export default App;
-
-
